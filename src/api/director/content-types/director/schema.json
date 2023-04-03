@@ -1,0 +1,52 @@
+{
+  "kind": "collectionType",
+  "collectionName": "directors",
+  "info": {
+    "singularName": "director",
+    "pluralName": "directors",
+    "displayName": "director",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "unique": true
+    },
+    "descEN": {
+      "type": "text"
+    },
+    "descFR": {
+      "type": "text"
+    },
+    "instaUrl": {
+      "type": "string"
+    },
+    "websiteUrl": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "movies": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::movie.movie",
+      "mappedBy": "directors"
+    }
+  }
+}
